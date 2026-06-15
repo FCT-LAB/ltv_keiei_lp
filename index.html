@@ -1,0 +1,1363 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>トリミングサロン専門 無料経営診断｜たかおき</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&family=EB+Garamond:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ivory: #FAF7F2;
+    --card: #FFFFFF;
+    --beige: #F0E9DD;
+    --beige-dark: #E2D8C6;
+    --green: #2D4A3E;
+    --green-soft: #41614F;
+    --brown: #8B6E4E;
+    --brown-light: #C4A882;
+    --line-green: #06C755;
+    --text-main: #2C2420;
+    --text-sub: #6B5B4E;
+    --text-faint: #9C8E80;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--ivory);
+    color: var(--text-main);
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 300;
+    line-height: 1.9;
+    font-size: 15px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: 480px;
+    margin: 0 auto;
+    background: var(--ivory);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .mincho { font-family: 'Shippori Mincho', serif; }
+  .garamond { font-family: 'EB Garamond', serif; }
+
+  /* ===== reveal on scroll ===== */
+  .reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+  }
+  .reveal.in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; transition: none; }
+  }
+
+  /* ===== shared section spacing ===== */
+  section {
+    padding: 76px 28px;
+  }
+
+  .section-inner { max-width: 100%; }
+
+  .eyebrow {
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-size: 0.78rem;
+    letter-spacing: 0.18em;
+    color: var(--brown);
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    display: block;
+  }
+
+  h2 {
+    font-family: 'Shippori Mincho', serif;
+    font-weight: 600;
+    font-size: 1.55rem;
+    line-height: 1.65;
+    color: var(--text-main);
+    margin-bottom: 28px;
+    letter-spacing: 0.02em;
+  }
+
+  p { margin-bottom: 1.6em; color: var(--text-main); font-weight: 300; }
+  p:last-child { margin-bottom: 0; }
+
+  .lead {
+    font-size: 1.02rem;
+    color: var(--text-sub);
+  }
+
+  /* ===================================================== */
+  /* HERO                                                   */
+  /* ===================================================== */
+  .hero {
+    padding: 64px 28px 56px;
+    background: linear-gradient(180deg, #FBF8F3 0%, var(--ivory) 100%);
+    position: relative;
+  }
+
+  .hero-tag {
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    color: var(--brown);
+    text-align: center;
+    margin-bottom: 28px;
+    text-transform: uppercase;
+  }
+
+  .hero h1 {
+    font-family: 'Shippori Mincho', serif;
+    font-weight: 700;
+    font-size: 1.95rem;
+    line-height: 1.75;
+    text-align: center;
+    color: var(--text-main);
+    margin-bottom: 36px;
+    letter-spacing: 0.01em;
+  }
+
+  .hero h1 .accent {
+    color: var(--green);
+  }
+
+  /* ---- circle motif: signature element ---- */
+  .circle-motif {
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto 36px;
+    display: block;
+  }
+
+  .hero-sub {
+    text-align: center;
+    font-family: 'Shippori Mincho', serif;
+    font-size: 1.12rem;
+    line-height: 2.1;
+    color: var(--green);
+    font-weight: 500;
+    margin-bottom: 16px;
+  }
+
+  .hero-sub .small {
+    display: block;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.82rem;
+    color: var(--text-sub);
+    font-weight: 400;
+    margin-top: 18px;
+    letter-spacing: 0.04em;
+  }
+
+  .hero-body {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 0.98rem;
+    color: var(--text-sub);
+  }
+
+  .hero-body .line {
+    margin-bottom: 0.3em;
+  }
+
+  .hero-body .strong-line {
+    color: var(--text-main);
+    font-weight: 500;
+    margin-top: 1.6em;
+    margin-bottom: 0;
+  }
+
+  /* ===================================================== */
+  /* CTA BUTTON                                             */
+  /* ===================================================== */
+  .cta-block {
+    margin: 40px 0 0;
+    text-align: center;
+  }
+
+  .cta-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    max-width: 360px;
+    padding: 19px 24px;
+    background: var(--line-green);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 999px;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    box-shadow: 0 8px 24px -8px rgba(6,199,85,0.45);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+
+  .cta-btn:active {
+    transform: scale(0.98);
+    box-shadow: 0 4px 14px -6px rgba(6,199,85,0.4);
+  }
+
+  .cta-btn svg { flex-shrink: 0; }
+
+  .cta-caption {
+    margin-top: 14px;
+    font-size: 0.76rem;
+    color: var(--text-faint);
+    letter-spacing: 0.04em;
+  }
+
+  /* ===================================================== */
+  /* PROBLEM SECTION                                        */
+  /* ===================================================== */
+  .section-problem {
+    background: var(--ivory);
+  }
+
+  .problem-list {
+    margin: 32px 0;
+    border-top: 1px solid var(--beige-dark);
+  }
+
+  .problem-item {
+    padding: 20px 0;
+    border-bottom: 1px solid var(--beige-dark);
+    font-size: 0.95rem;
+    color: var(--text-sub);
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .problem-item .mark {
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--brown-light);
+    flex-shrink: 0;
+    line-height: 1.9;
+  }
+
+  /* ===================================================== */
+  /* PHILOSOPHY SECTION                                     */
+  /* ===================================================== */
+  .section-philosophy {
+    background: var(--green);
+    color: var(--ivory);
+  }
+
+  .section-philosophy .eyebrow { color: var(--brown-light); }
+
+  .section-philosophy h2 {
+    color: var(--ivory);
+    text-align: center;
+  }
+
+  .section-philosophy p {
+    color: rgba(250,247,242,0.86);
+    text-align: center;
+    font-size: 0.96rem;
+  }
+
+  .philosophy-highlight {
+    background: rgba(250,247,242,0.08);
+    border: 1px solid rgba(250,247,242,0.18);
+    border-radius: 4px;
+    padding: 28px 22px;
+    margin: 36px 0;
+    text-align: center;
+  }
+
+  .philosophy-highlight p {
+    color: var(--ivory);
+    font-family: 'Shippori Mincho', serif;
+    font-size: 1.08rem;
+    font-weight: 500;
+    line-height: 2;
+    margin-bottom: 0;
+  }
+
+  .ltv-term {
+    text-align: center;
+    margin: 40px 0;
+  }
+
+  .ltv-term .jp {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    color: var(--ivory);
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  .ltv-term .en {
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-size: 0.85rem;
+    letter-spacing: 0.15em;
+    color: var(--brown-light);
+    text-transform: uppercase;
+  }
+
+  .philosophy-goal {
+    margin-top: 44px;
+    text-align: center;
+  }
+
+  .philosophy-goal .not {
+    font-size: 0.92rem;
+    color: rgba(250,247,242,0.55);
+    text-decoration: line-through;
+    margin-bottom: 10px;
+  }
+
+  .philosophy-goal .yes {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 1.22rem;
+    font-weight: 700;
+    color: var(--line-green);
+    letter-spacing: 0.04em;
+    line-height: 1.9;
+  }
+
+  /* ===================================================== */
+  /* STORY SECTION                                          */
+  /* ===================================================== */
+  .section-story {
+    background: var(--ivory);
+  }
+
+  .story-meta {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 36px;
+  }
+
+  .story-meta span {
+    font-size: 0.74rem;
+    padding: 6px 14px;
+    border: 1px solid var(--beige-dark);
+    border-radius: 999px;
+    color: var(--text-sub);
+    letter-spacing: 0.04em;
+  }
+
+  .story-block {
+    margin-bottom: 44px;
+  }
+
+  .story-block:last-child { margin-bottom: 0; }
+
+  .story-label {
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-size: 0.78rem;
+    letter-spacing: 0.15em;
+    color: var(--brown);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  .story-block h3 {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 1.12rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: var(--text-main);
+  }
+
+  .story-block p {
+    font-size: 0.95rem;
+    color: var(--text-sub);
+  }
+
+  /* numbers row */
+  .number-row {
+    display: flex;
+    gap: 14px;
+    margin: 22px 0 8px;
+  }
+
+  .number-card {
+    flex: 1;
+    background: var(--card);
+    border: 1px solid var(--beige-dark);
+    border-radius: 6px;
+    padding: 18px 14px;
+    text-align: center;
+  }
+
+  .number-card .num {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: var(--green);
+    line-height: 1.2;
+  }
+
+  .number-card .num .unit {
+    font-size: 0.85rem;
+    font-family: 'Noto Sans JP', sans-serif;
+  }
+
+  .number-card .label {
+    font-size: 0.72rem;
+    color: var(--text-sub);
+    margin-top: 6px;
+    letter-spacing: 0.03em;
+  }
+
+  /* fall graphic (the loss period) */
+  .fall-box {
+    background: var(--card);
+    border: 1px solid var(--beige-dark);
+    border-left: 3px solid var(--brown-light);
+    border-radius: 4px;
+    padding: 22px 20px;
+    margin: 22px 0;
+  }
+
+  .fall-box .fall-num {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.7rem;
+    color: var(--brown);
+    font-weight: 500;
+  }
+
+  .fall-box .fall-label {
+    font-size: 0.82rem;
+    color: var(--text-sub);
+    margin-top: 4px;
+  }
+
+  /* ===================================================== */
+  /* PROOF / DIAGNOSIS SAMPLE SECTION                       */
+  /* ===================================================== */
+  .section-proof {
+    background: var(--beige);
+  }
+
+  .proof-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 32px 0;
+  }
+
+  .proof-item {
+    background: var(--card);
+    border-radius: 6px;
+    padding: 20px 14px;
+    text-align: center;
+    border: 1px solid var(--beige-dark);
+  }
+
+  .proof-item .num {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.5rem;
+    color: var(--green);
+    font-weight: 500;
+    line-height: 1.3;
+  }
+
+  .proof-item .num .unit {
+    font-size: 0.78rem;
+    font-family: 'Noto Sans JP', sans-serif;
+    color: var(--text-sub);
+  }
+
+  .proof-item .label {
+    font-size: 0.72rem;
+    color: var(--text-sub);
+    margin-top: 6px;
+    line-height: 1.5;
+  }
+
+  .proof-item.wide {
+    grid-column: 1 / -1;
+  }
+
+  .sample-wrap {
+    margin: 40px 0 16px;
+  }
+
+  .sample-caption {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 1.02rem;
+    font-weight: 600;
+    text-align: center;
+    color: var(--text-main);
+    margin-bottom: 18px;
+  }
+
+  .sample-frame {
+    border: 1px solid var(--beige-dark);
+    border-radius: 6px;
+    overflow: hidden;
+    background: var(--card);
+    box-shadow: 0 16px 40px -20px rgba(44,36,32,0.25);
+  }
+
+  .sample-frame img {
+    width: 100%;
+    display: block;
+  }
+
+  /* placeholder version when no image URL supplied */
+  .sample-placeholder {
+    aspect-ratio: 3 / 4;
+    background:
+      repeating-linear-gradient(135deg, rgba(139,110,78,0.06) 0px, rgba(139,110,78,0.06) 2px, transparent 2px, transparent 14px),
+      var(--ivory);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: var(--text-faint);
+  }
+
+  .sample-placeholder .icon {
+    width: 36px;
+    height: 36px;
+    opacity: 0.5;
+  }
+
+  .sample-placeholder .txt {
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+  }
+
+  .sample-note {
+    text-align: center;
+    font-size: 0.84rem;
+    color: var(--text-sub);
+    margin-top: 18px;
+  }
+
+  .disclaimer {
+    font-size: 0.7rem;
+    color: var(--text-faint);
+    text-align: center;
+    margin-top: 28px;
+    letter-spacing: 0.02em;
+  }
+
+  /* ===================================================== */
+  /* OFFER SECTION                                          */
+  /* ===================================================== */
+  .section-offer {
+    background: var(--ivory);
+  }
+
+  .offer-list {
+    margin: 32px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .offer-row {
+    display: flex;
+    gap: 18px;
+    padding: 22px 0;
+    border-bottom: 1px solid var(--beige-dark);
+    align-items: flex-start;
+  }
+
+  .offer-row:first-child {
+    border-top: 1px solid var(--beige-dark);
+  }
+
+  .offer-num {
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-size: 1.4rem;
+    color: var(--brown-light);
+    flex-shrink: 0;
+    width: 32px;
+    line-height: 1.4;
+  }
+
+  .offer-text h4 {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: var(--text-main);
+  }
+
+  .offer-text p {
+    font-size: 0.88rem;
+    color: var(--text-sub);
+    margin-bottom: 0;
+  }
+
+  .offer-note {
+    background: var(--beige);
+    border-radius: 6px;
+    padding: 22px 20px;
+    margin-top: 32px;
+    text-align: center;
+  }
+
+  .offer-note p {
+    font-size: 0.9rem;
+    color: var(--text-sub);
+    margin-bottom: 0;
+  }
+
+  /* ===================================================== */
+  /* SALON SECTION                                          */
+  /* ===================================================== */
+  .section-salon {
+    background: var(--beige);
+  }
+
+  .salon-status {
+    display: flex;
+    gap: 14px;
+    margin: 28px 0 36px;
+  }
+
+  .salon-stat {
+    flex: 1;
+    background: var(--card);
+    border-radius: 6px;
+    padding: 20px 14px;
+    text-align: center;
+    border: 1px solid var(--beige-dark);
+  }
+
+  .salon-stat .num {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.8rem;
+    color: var(--green);
+    font-weight: 500;
+  }
+
+  .salon-stat .label {
+    font-size: 0.75rem;
+    color: var(--text-sub);
+    margin-top: 6px;
+  }
+
+  .salon-availability {
+    background: var(--green);
+    border-radius: 6px;
+    padding: 24px 22px;
+    text-align: center;
+    margin-top: 4px;
+  }
+
+  .salon-availability .num {
+    font-family: 'EB Garamond', serif;
+    font-size: 2.1rem;
+    color: var(--line-green);
+    font-weight: 600;
+    line-height: 1.3;
+  }
+
+  .salon-availability .num .unit {
+    font-size: 1rem;
+    color: var(--ivory);
+    font-family: 'Noto Sans JP', sans-serif;
+  }
+
+  .salon-availability .label {
+    font-size: 0.8rem;
+    color: rgba(250,247,242,0.75);
+    margin-top: 6px;
+    letter-spacing: 0.04em;
+  }
+
+  /* ===================================================== */
+  /* FAQ SECTION                                            */
+  /* ===================================================== */
+  .section-faq {
+    background: var(--ivory);
+  }
+
+  .faq-item {
+    border-bottom: 1px solid var(--beige-dark);
+    padding: 24px 0;
+  }
+
+  .faq-item:first-child {
+    border-top: 1px solid var(--beige-dark);
+  }
+
+  .faq-q {
+    display: flex;
+    gap: 14px;
+    font-family: 'Shippori Mincho', serif;
+    font-weight: 600;
+    font-size: 0.96rem;
+    color: var(--text-main);
+    margin-bottom: 12px;
+  }
+
+  .faq-q .qa-mark {
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    color: var(--green);
+    flex-shrink: 0;
+  }
+
+  .faq-a {
+    display: flex;
+    gap: 14px;
+    font-size: 0.88rem;
+    color: var(--text-sub);
+  }
+
+  .faq-a .qa-mark {
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    color: var(--brown-light);
+    flex-shrink: 0;
+  }
+
+  .faq-a p { margin-bottom: 0; }
+
+  /* ===================================================== */
+  /* FINAL CTA SECTION                                      */
+  /* ===================================================== */
+  .section-final {
+    background: var(--green);
+    color: var(--ivory);
+    text-align: center;
+  }
+
+  .section-final h2 {
+    color: var(--ivory);
+  }
+
+  .section-final p {
+    color: rgba(250,247,242,0.85);
+    font-size: 0.95rem;
+  }
+
+  .section-final .offer-name {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--ivory);
+    margin: 32px 0 8px;
+    letter-spacing: 0.06em;
+  }
+
+  .section-final .offer-tag {
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-size: 0.78rem;
+    letter-spacing: 0.18em;
+    color: var(--brown-light);
+    text-transform: uppercase;
+    margin-bottom: 0;
+  }
+
+  .section-final .cta-caption {
+    color: rgba(250,247,242,0.5);
+  }
+
+  /* ===================================================== */
+  /* FOOTER                                                 */
+  /* ===================================================== */
+  footer {
+    padding: 36px 28px 48px;
+    text-align: center;
+    background: var(--ivory);
+  }
+
+  footer .foot-name {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 0.95rem;
+    color: var(--text-sub);
+    margin-bottom: 6px;
+  }
+
+  footer .foot-meta {
+    font-size: 0.72rem;
+    color: var(--text-faint);
+    letter-spacing: 0.04em;
+  }
+
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- ============================================= -->
+  <!-- HERO                                           -->
+  <!-- ============================================= -->
+  <section class="hero">
+    <div class="hero-tag">Trimming Salon Management</div>
+
+    <h1>
+      犬が減る時代に、<br>
+      犬を増やさず、<br>
+      <span class="accent">売上を伸ばす。</span>
+    </h1>
+
+    <!-- circle motif: signature visual -->
+    <svg class="circle-motif reveal" viewBox="0 0 320 160" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <!-- many small faint circles: scattered new customers -->
+      <g fill="none" stroke="#C4A882" stroke-width="1" opacity="0.45">
+        <circle cx="20" cy="20" r="6"></circle>
+        <circle cx="42" cy="14" r="5"></circle>
+        <circle cx="64" cy="26" r="6"></circle>
+        <circle cx="14" cy="44" r="5"></circle>
+        <circle cx="40" cy="46" r="6"></circle>
+        <circle cx="66" cy="50" r="5"></circle>
+        <circle cx="90" cy="18" r="6"></circle>
+        <circle cx="92" cy="44" r="5"></circle>
+        <circle cx="20" cy="68" r="5"></circle>
+        <circle cx="48" cy="70" r="6"></circle>
+        <circle cx="74" cy="72" r="5"></circle>
+        <circle cx="100" cy="68" r="6"></circle>
+      </g>
+      <text x="55" y="100" text-anchor="middle" font-family="Shippori Mincho, serif" font-size="11" fill="#9C8E80" letter-spacing="2">広く、浅く</text>
+
+      <!-- divider -->
+      <line x1="160" y1="10" x2="160" y2="120" stroke="#E2D8C6" stroke-width="1"></line>
+
+      <!-- few large concentric circles: deep relationship -->
+      <g>
+        <circle cx="225" cy="55" r="34" fill="none" stroke="#2D4A3E" stroke-width="1.5" opacity="0.25"></circle>
+        <circle cx="225" cy="55" r="22" fill="none" stroke="#2D4A3E" stroke-width="1.5" opacity="0.55"></circle>
+        <circle cx="225" cy="55" r="10" fill="#2D4A3E"></circle>
+
+        <circle cx="280" cy="40" r="6" fill="#2D4A3E" opacity="0.7"></circle>
+        <circle cx="290" cy="68" r="6" fill="#2D4A3E" opacity="0.7"></circle>
+        <circle cx="270" cy="80" r="6" fill="#2D4A3E" opacity="0.7"></circle>
+      </g>
+      <text x="245" y="100" text-anchor="middle" font-family="Shippori Mincho, serif" font-size="11" fill="#2D4A3E" letter-spacing="2">狭く、深く</text>
+    </svg>
+
+    <div class="hero-sub reveal">
+      新規を増やすよりも、<br>
+      今いる30頭との関係性。
+      <span class="small">トリミングサロン専門　無料経営診断、実施中</span>
+    </div>
+
+    <div class="hero-body reveal">
+      <p class="line">売上はあるのに、お金が残らない。</p>
+      <p class="line">忙しいのに、楽にならない。</p>
+      <p class="line">値上げが、怖い。</p>
+      <p class="strong-line">
+        それは、あなたの努力が<br>
+        足りないからではありません。<br>
+        経営の「構造」が、<br>
+        そうなっているからです。
+      </p>
+    </div>
+
+    <div class="cta-block reveal">
+      <a href="#cta-final" class="cta-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2C6.48 2 2 5.94 2 10.8c0 2.78 1.6 5.24 4.06 6.85-.18.66-.66 2.42-.76 2.8-.12.47.17.47.36.34.15-.1 2.4-1.63 3.38-2.3.62.09 1.27.14 1.96.14 5.52 0 10-3.94 10-8.8C21 5.94 17.52 2 12 2z" fill="white"/>
+        </svg>
+        LINEで無料診断を受ける
+      </a>
+      <p class="cta-caption">登録後、約1分で診断フォームへ進めます</p>
+    </div>
+  </section>
+
+  <!-- ============================================= -->
+  <!-- PROBLEM                                        -->
+  <!-- ============================================= -->
+  <section class="section-problem">
+    <div class="section-inner reveal">
+      <span class="eyebrow">The Question</span>
+      <h2>その忙しさ、<br>本当に必要ですか。</h2>
+
+      <p class="lead">
+        毎月、新しいお客様を増やそうとする。<br>
+        SNSを更新し、広告を出し、予約枠を埋める。
+      </p>
+
+      <p>
+        頭数は増えていく。売上も、悪くない。<br>
+        でも、手元に残るお金は変わらない。
+      </p>
+
+      <p>
+        休みは減って、体は疲れていく。<br>
+        今のペースで、何年続けられるだろう。
+      </p>
+
+      <div class="problem-list">
+        <div class="problem-item"><span class="mark">―</span><span>新規集客を頑張るほど、なぜか楽になっていかない</span></div>
+        <div class="problem-item"><span class="mark">―</span><span>値上げをしたいが、お客様が離れるのが怖い</span></div>
+        <div class="problem-item"><span class="mark">―</span><span>スタッフを雇いたいが、利益が追いついていない</span></div>
+        <div class="problem-item"><span class="mark">―</span><span>このまま、いつまで現場に立てるか分からない</span></div>
+      </div>
+
+      <p>
+        それは、あなただけの問題ではありません。<br>
+        業界の構造そのものが、そうなっているからです。
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================================= -->
+  <!-- PHILOSOPHY                                     -->
+  <!-- ============================================= -->
+  <section class="section-philosophy">
+    <div class="section-inner reveal">
+      <span class="eyebrow">The Idea</span>
+      <h2>見るべきは、<br>新規ではなくLTV。</h2>
+
+      <p>
+        犬の数は、これから減っていきます。<br>
+        その中で新規のお客様を増やし続けることは、<br>
+        限られたパイを同業者と<br>
+        奪い合うことに他なりません。
+      </p>
+
+      <p>
+        価格は下がり、忙しさは増し、<br>
+        利益は薄くなる。<br>
+        それが「集客頼みの経営」の<br>
+        行き着く先です。
+      </p>
+
+      <div class="ltv-term">
+        <span class="jp">顧客生涯価値</span>
+        <span class="en">L T V</span>
+      </div>
+
+      <p>
+        一頭のお客様と、どれだけ長く、<br>
+        どれだけ深く、関係を築けるか。<br>
+        それが、これからの時代の<br>
+        経営の軸になります。
+      </p>
+
+      <div class="philosophy-highlight">
+        <p>
+          新規を増やさなくても、<br>
+          売上は伸ばせます。<br><br>
+          今いる30頭との関係性を深めることで、<br>
+          市場そのものを、広げることができるのです。
+        </p>
+      </div>
+
+      <div class="philosophy-goal">
+        <p class="not">「儲かるトリマー」を増やすこと</p>
+        <p class="yes">「稼ぎ続けられるトリマー」を<br>増やすこと</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================= -->
+  <!-- STORY                                          -->
+  <!-- ============================================= -->
+  <section class="section-story">
+    <div class="section-inner reveal">
+      <span class="eyebrow">The Story</span>
+      <h2>成功の話ではありません。<br>失敗から学んだ話です。</h2>
+
+      <div class="story-meta">
+        <span>トリマー歴 22年</span>
+        <span>独立11年・法人化4年</span>
+        <span>現在2店舗運営</span>
+      </div>
+
+      <div class="story-block">
+        <span class="story-label">Chapter 1 ― 自宅サロン</span>
+        <h3>LTV経営を、最初に実践した場所</h3>
+        <p>
+          最初に、自宅サロンで実践したのは、<br>
+          LTVを最大化する経営でした。<br>
+          4度の値上げを行い、新規受付は停止。<br>
+          顧客は、30頭。
+        </p>
+        <div class="number-row">
+          <div class="number-card">
+            <div class="num">650<span class="unit">万円</span></div>
+            <div class="label">年間売上</div>
+          </div>
+          <div class="number-card">
+            <div class="num">62<span class="unit">万円</span></div>
+            <div class="label">顧客1頭あたり<br>年間売上 最高額</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="story-block">
+        <span class="story-label">Chapter 2 ― 出店、そして転落</span>
+        <h3>「同じことをすれば、<br>同じ結果になる」と思っていた</h3>
+        <p>
+          自宅サロンでやってきたことを、<br>
+          そのままテナントでも再現できる。<br>
+          お客様にも、同じように伝わる。<br><br>
+          そう思っていました。
+        </p>
+        <p>
+          新規のお客様は、ゼロではありませんでした。<br>
+          でも、本来積み上がっていくはずの<br>
+          売上が、いっこうに増えない。
+        </p>
+        <p>
+          気づけば、二度と来ないお客様を、<br>
+          増やし続けているだけでした。
+        </p>
+        <p>
+          「来月になれば、大丈夫」<br>
+          そう言い聞かせて、<br>
+          自分を誤魔化していました。
+        </p>
+        <div class="fall-box">
+          <div class="fall-num">毎月 50万円</div>
+          <div class="fall-label">垂れ流されていた赤字</div>
+        </div>
+        <p>
+          夏が終わる頃、<br>
+          税理士から電話がありました。
+        </p>
+        <p>
+          「お店、閉めましょうか。<br>
+          それなら、家賃だけの赤字で済みます。」
+        </p>
+        <p>
+          ──ホッとした。<br>
+          家賃だけで済むのか。よかった。
+        </p>
+        <p>
+          もう、正常な判断ができる<br>
+          状態ではありませんでした。
+        </p>
+      </div>
+
+      <div class="story-block">
+        <span class="story-label">Chapter 3 ― 学び直しと、今</span>
+        <h3>なりふり構わず、<br>できることを全てやった</h3>
+        <p>
+          そこから、意地もプライドも<br>
+          こだわりも、全て捨てました。<br>
+          できることを、全てやった。
+        </p>
+        <p>
+          売上はV字、いや、<br>
+          ほぼI字に近い回復をして、<br><br>
+          今では、最初のモデルに<br>
+          負けず劣らずの、<br>
+          安定した高LTV経営を<br>
+          実現しています。
+        </p>
+        <p>
+          今は2店舗目を運営しながら、<br>
+          値上げ、来店周期の改善、LTVの向上を、<br>
+          今も現場で検証し続けています。
+        </p>
+        <p>
+          完成形ではありません。<br>
+          だからこそ、これからお伝えすることは、<br>
+          理論ではなく、現場で起きていることです。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================= -->
+  <!-- PROOF + DIAGNOSIS SAMPLE                       -->
+  <!-- ============================================= -->
+  <section class="section-proof">
+    <div class="section-inner reveal">
+      <span class="eyebrow">The Evidence</span>
+      <h2>数字で見る、<br>これまでの取り組み。</h2>
+
+      <div class="proof-grid">
+        <div class="proof-item">
+          <div class="num">4,000<span class="unit">人 超</span></div>
+          <div class="label">Threads<br>フォロワー</div>
+        </div>
+        <div class="proof-item">
+          <div class="num">60<span class="unit">名</span></div>
+          <div class="label">無料セミナー<br>申込</div>
+        </div>
+        <div class="proof-item">
+          <div class="num">30<span class="unit">名</span></div>
+          <div class="label">セミナー<br>同時視聴</div>
+        </div>
+        <div class="proof-item">
+          <div class="num">7<span class="unit">名</span></div>
+          <div class="label">オンラインサロン<br>運営9ヶ月</div>
+        </div>
+        <div class="proof-item wide">
+          <div class="num">90 → 132 <span class="unit">頭 / 月</span></div>
+          <div class="label">メンバー店舗での、来店周期改善による変化（12月→翌年3月）</div>
+        </div>
+      </div>
+
+      <p>
+        店舗見学会も開催し、<br>
+        大阪や岡山など、遠方からの<br>
+        参加者もいました。
+      </p>
+
+      <!-- Diagnosis sample -->
+      <div class="sample-wrap">
+        <div class="sample-caption">実際に、こんな診断結果が届きます</div>
+
+        <div class="sample-frame">
+          <!--
+            診断サンプル画像を表示する場合は、
+            下の <div class="sample-placeholder"> ブロックを削除し、
+            代わりに以下のタグを有効化してください。
+
+            <img src="ここに画像URLを入力" alt="トリミングサロン経営診断レポートのサンプル">
+          -->
+          <div class="sample-placeholder">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" xmlns="http://www.w3.org/2000/svg">
+              <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+              <circle cx="8.5" cy="8.5" r="1.5"></circle>
+              <path d="M21 15l-5-5L5 21"></path>
+            </svg>
+            <span class="txt">診断レポート サンプル</span>
+          </div>
+        </div>
+
+        <p class="sample-note">
+          これは、実際の診断レポートの一例です。<br>
+          あなたのサロンの状態も、<br>
+          こうして「見える化」されます。
+        </p>
+      </div>
+
+      <p class="disclaimer">※ 個別の事例であり、成果を保証するものではありません</p>
+    </div>
+  </section>
+
+  <!-- ============================================= -->
+  <!-- OFFER                                          -->
+  <!-- ============================================= -->
+  <section class="section-offer">
+    <div class="section-inner reveal">
+      <span class="eyebrow">The Offer</span>
+      <h2>あなたのサロンの<br>「構造」を<br>見える化します。</h2>
+
+      <p class="lead">
+        トリミングサロン専門<br>
+        無料経営診断<br><br>
+        LINE登録で、受け取ることができます。
+      </p>
+
+      <div class="offer-list">
+        <div class="offer-row">
+          <div class="offer-num">1</div>
+          <div class="offer-text">
+            <h4>経営タイプ分析</h4>
+            <p>あなたのサロンが、今どんな構造で動いているのか。</p>
+          </div>
+        </div>
+        <div class="offer-row">
+          <div class="offer-num">2</div>
+          <div class="offer-text">
+            <h4>売上構造分析</h4>
+            <p>売上は、どこから生まれているのか。</p>
+          </div>
+        </div>
+        <div class="offer-row">
+          <div class="offer-num">3</div>
+          <div class="offer-text">
+            <h4>利益構造分析</h4>
+            <p>なぜ、利益が残らないのか。</p>
+          </div>
+        </div>
+        <div class="offer-row">
+          <div class="offer-num">4</div>
+          <div class="offer-text">
+            <h4>ボトルネック特定</h4>
+            <p>今、最も改善すべき箇所はどこか。</p>
+          </div>
+        </div>
+        <div class="offer-row">
+          <div class="offer-num">5</div>
+          <div class="offer-text">
+            <h4>改善優先順位の提示</h4>
+            <p>何から、手をつければいいのか。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="offer-note">
+        <p>
+          診断は、今のあなたの状態を<br>
+          否定するものではありません。<br><br>
+          「なぜ、今こうなっているのか」を、<br>
+          一緒に見るためのものです。
+        </p>
+      </div>
+
+      <div class="cta-block">
+        <a href="#cta-final" class="cta-btn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2C6.48 2 2 5.94 2 10.8c0 2.78 1.6 5.24 4.06 6.85-.18.66-.66 2.42-.76 2.8-.12.47.17.47.36.34.15-.1 2.4-1.63 3.38-2.3.62.09 1.27.14 1.96.14 5.52 0 10-3.94 10-8.8C21 5.94 17.52 2 12 2z" fill="white"/>
+          </svg>
+          LINEで無料診断を受ける
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================= -->
+  <!-- ONLINE SALON                                   -->
+  <!-- ============================================= -->
+  <section class="section-salon">
+    <div class="section-inner reveal">
+      <span class="eyebrow">After the Diagnosis</span>
+      <h2>少人数で、<br>深く向き合う場。</h2>
+
+      <p class="lead">
+        無料診断の先には、<br>
+        継続的に学べるオンラインサロンが<br>
+        あります。
+      </p>
+
+      <div class="salon-status">
+        <div class="salon-stat">
+          <div class="num">7<span style="font-size:1rem;">名</span></div>
+          <div class="label">現在のメンバー</div>
+        </div>
+        <div class="salon-stat">
+          <div class="num">9<span style="font-size:1rem;">ヶ月</span></div>
+          <div class="label">運営期間</div>
+        </div>
+      </div>
+
+      <p>
+        このオンラインサロンは、<br>
+        人数を増やすことを目的にしていません。<br><br>
+        一人ひとりの店舗で、<br>
+        本当に成果が出るかどうかを、<br>
+        大切にしています。
+      </p>
+
+      <div class="salon-availability">
+        <div class="num">あと 7<span class="unit">名</span></div>
+        <div class="label">で、募集を一度停止する予定です</div>
+      </div>
+
+      <p style="margin-top: 32px;">
+        無理に勧誘するつもりはありません。<br>
+        まずは、無料診断から。<br>
+        あなたのサロンの状態を、<br>
+        一緒に見てみませんか。
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================================= -->
+  <!-- FAQ                                            -->
+  <!-- ============================================= -->
+  <section class="section-faq">
+    <div class="section-inner reveal">
+      <span class="eyebrow">FAQ</span>
+      <h2>よくある質問</h2>
+
+      <div class="faq-item">
+        <div class="faq-q"><span class="qa-mark">Q</span><span>診断は本当に無料ですか？</span></div>
+        <div class="faq-a"><span class="qa-mark">A</span><p>はい、無料です。LINE登録後、診断フォームにご回答いただくだけで、分析結果をお届けします。</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q"><span class="qa-mark">Q</span><span>個人サロンでも対象になりますか？</span></div>
+        <div class="faq-a"><span class="qa-mark">A</span><p>はい。むしろ、個人サロン・小規模店舗の方を想定して設計しています。スタッフを抱えていない方も、ぜひご活用ください。</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q"><span class="qa-mark">Q</span><span>診断後、強い売り込みはありますか？</span></div>
+        <div class="faq-a"><span class="qa-mark">A</span><p>診断結果をお届けした後、ご希望の方にはオンラインサロンのご案内もしています。ただし、診断を受けただけで終わる方も、もちろん問題ありません。</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q"><span class="qa-mark">Q</span><span>どのくらいで結果が届きますか？</span></div>
+        <div class="faq-a"><span class="qa-mark">A</span><p>LINE登録後、診断フォームへのご回答をいただいてから、順次お届けしています。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================= -->
+  <!-- FINAL CTA                                      -->
+  <!-- ============================================= -->
+  <section class="section-final" id="cta-final">
+    <div class="section-inner reveal">
+      <span class="eyebrow">Before You Go</span>
+      <h2>新規を増やす前に、<br>見るべきものがあります。</h2>
+
+      <p>
+        犬が減っていく時代に、<br>
+        新規集客に頼らない経営は、可能です。<br><br>
+        今いるお客様との関係性が、<br>
+        これからのあなたの経営を支えます。
+      </p>
+
+      <p>
+        まずは、あなたのサロンの「今」を、<br>
+        見える化することから。
+      </p>
+
+      <div class="offer-tag">Free Diagnosis</div>
+      <div class="offer-name">トリミングサロン専門 無料経営診断</div>
+
+      <div class="cta-block">
+        <a href="#" class="cta-btn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2C6.48 2 2 5.94 2 10.8c0 2.78 1.6 5.24 4.06 6.85-.18.66-.66 2.42-.76 2.8-.12.47.17.47.36.34.15-.1 2.4-1.63 3.38-2.3.62.09 1.27.14 1.96.14 5.52 0 10-3.94 10-8.8C21 5.94 17.52 2 12 2z" fill="white"/>
+          </svg>
+          LINEで無料診断を受ける
+        </a>
+        <p class="cta-caption">登録後、約1分で診断フォームへ進めます</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================= -->
+  <!-- FOOTER                                         -->
+  <!-- ============================================= -->
+  <footer>
+    <div class="foot-name">たかおき ｜ トリマー歴22年</div>
+    <div class="foot-meta">独立11年・法人化4年・現在2店舗運営</div>
+  </footer>
+
+</div>
+
+<script>
+  // scroll reveal
+  const targets = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  targets.forEach(t => io.observe(t));
+
+  // smooth-scroll fallback handled natively via scroll-behavior
+</script>
+
+</body>
+</html>
